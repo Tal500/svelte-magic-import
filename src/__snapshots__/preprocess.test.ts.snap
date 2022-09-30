@@ -1,0 +1,32 @@
+// Vitest Snapshot v1
+
+exports[`preprocess snapshots > simple.svelte 1`] = `
+{
+  "code": "<script lang=\\"ts\\">
+	
+</script>
+
+<h1 class={\\"svelte-magic-blabla\\"}>Welcome to your library project</h1>
+<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
+<p>Visit <a href=\\"https://kit.svelte.dev\\">kit.svelte.dev</a> to read the documentation</p>
+
+<style>
+	:global(.svelte-magic-blabla) {
+		color: red;
+	}
+</style>
+",
+  "map": SourceMap {
+    "file": null,
+    "mappings": "AAAA;AACA,CAAkD;AAClD;AACA;AACA,WAAW,qBAAc;AACzB;AACA;AACA;AACA;AACA,CAAC,6BAAc;AACf;AACA;AACA;",
+    "names": [],
+    "sources": [
+      null,
+    ],
+    "sourcesContent": [
+      null,
+    ],
+    "version": 3,
+  },
+}
+`;

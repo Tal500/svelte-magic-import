@@ -1,6 +1,6 @@
 import MagicString from 'magic-string';
 
-export const magic_preprocess = () => ({
+const magic_preprocess = () => ({
 	markup: ({ content, filename }: { content: string; filename: string }) => {
 		console.log('this runs first');
 		//console.log('content: ' + content);
@@ -12,7 +12,7 @@ export const magic_preprocess = () => ({
 
 		if (result) {
 			//console.log("Found0: " + result[0])
-			const importStatement = result[0].match(/import { shared } from '\$lib';/gs);
+			const importStatement = result[0].match(/import { shared } from 'svelte-magic-preprocess';/gs);
 			if (importStatement) {
 				// TODO: Use magic string
 				console.log('Found');
@@ -35,3 +35,5 @@ export const magic_preprocess = () => ({
 		};
 	}
 });
+
+export default magic_preprocess;

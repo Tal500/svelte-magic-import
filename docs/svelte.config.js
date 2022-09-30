@@ -3,7 +3,7 @@ import preprocess from 'svelte-preprocess';
 
 //const { magic_preprocess } = require('./src/lib/magic_preprocess-copy.ts');
 //import { magic_preprocess } from './src/lib/magic_preprocess.js';
-import { magic_preprocess } from '../dist/magic_preprocess.mjs';
+import magic_preprocess from '../dist/preprocess.mjs';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
