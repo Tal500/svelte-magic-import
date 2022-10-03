@@ -41,5 +41,10 @@
 	"type": "module",
 	"dependencies": {
 		"magic-string": "^0.26.5"
-	}
+	},
+	"exports": {
+		".": "./dist/index.mjs",
+		"./preprocess": "./dist/preprocess.mjs"
+	},
+	"files": ["./dist"]
 }
