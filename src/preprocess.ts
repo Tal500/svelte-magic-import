@@ -47,6 +47,7 @@ const magicPreprocess = () => ({
 						// TODO: Format error log better, with line number and location, and filename.
 						console.error(`The expression {${identifierArea}} isn't valid. Any value inside the function expression \`shared(*)\` must be string literal`);
 						return match;// Return the original string, nothing to modify
+						// TODO: Instead of returning the same match, we should use a better find&replace method.
 					}
 					// otherwise
 
