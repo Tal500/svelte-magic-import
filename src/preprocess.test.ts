@@ -27,3 +27,6 @@ describe('preprocess snapshots', () => {
         })
       });
 });
+
+// TODO: Write better tests instead of snapshots:
+//  Check that it switched the correct places of definitions
