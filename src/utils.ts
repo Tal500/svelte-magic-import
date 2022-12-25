@@ -72,11 +72,25 @@ export function contextParserTagDef(code: string, start: number, end: number, co
             const valueAreaMatch = valueRe.exec(code);
             if (valueAreaMatch && match.index < end) {
                 const { valueArea } = valueAreaMatch.groups as MatchedGroupsMust<'valueArea'>;
-                if (valueArea.startsWith("'")) {
-                    const valueMatch = valueArea.match(/^'(?<value>.*?)'/);// TODO: Negatic look beheind to the escap operator
-                    // TODO
+                
+                if (valueArea.startsWith("'") || valueArea.startsWith('"')) {
+                    const closingChar = valueArea[0];
+                    let lastFoundClosingChar = 0;
+                    while ((lastFoundClosingChar = valueArea.indexOf(closingChar, lastFoundClosingChar + 1)) >= 0) {
+                        let escapeCount = 0;
+                        while (valueArea[lastFoundClosingChar - escapeCount - 1] == '\\') {
+                            ++escapeCount;
+                        }
+                        if (escapeCount % 2 === 1) {
+                            break;// finally founded the correct closing
+                        }
+                    }
+                    if (lastFoundClosingChar < 0) {// In the case we didn't found the correct closing
+                        // TODO
+                    }
                 }
-                // TODO: Handle also '"' and '{'
+
+                // TODO: Handle starting with '{'
                 // TODO: Warning! Svelte allows to put {} values inside the '"' and "'"! So need to pass it to script parsing.
             }
         } else {
